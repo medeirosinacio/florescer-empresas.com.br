@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #0d6efd;
+  --color-primary-dark: #0b5ed7;
+}
+
+/* Font faces */
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+/* Feature icon box */
+@utility feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(to bottom right, var(--color-primary), var(--color-primary-dark));
+  color: white;
+}
+
+/* Background image for featured blog post */
+@utility bg-featured-blog {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 15rem;
+}
+
+/* Blog post prose content */
+.blog-post-content p {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.blog-post-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post-content code {
+  background-color: var(--color-gray-100);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+}
+
+/* Checkmark animation for contact success */
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #4d8512;
+  fill: none;
+  animation: checkmark-stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 0 auto;
+  box-shadow: inset 0 0 0 #5b9918;
+  animation: checkmark-fill 0.4s ease-in-out 0.4s forwards,
+    checkmark-scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: checkmark-stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes checkmark-stroke {
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes checkmark-scale {
+  0%, 100% { transform: none; }
+  50% { transform: scale3d(1.1, 1.1, 1); }
+}
+
+@keyframes checkmark-fill {
+  100% { box-shadow: inset 0 0 0 30px #5b9918; }
+}
+
+/* Scroll animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Button loading state */
+.btn-load-img:disabled {
+  font-size: 0 !important;
+}
+.btn-load-img:disabled img {
+  display: inline-block !important;
+}
+
+/* Icon pulse animation */
+@keyframes icon-pulse {
+  0% { transform: scale(0.7); }
+  50% { transform: scale(0.75); }
+  100% { transform: scale(0.7); }
+}
+.icon-revert {
+  height: 40px;
+  width: 40px;
+  opacity: 0.8;
+  animation: icon-pulse 1.5s infinite;
+}

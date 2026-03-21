@@ -1,0 +1,17 @@
+---
+layout: html_minifier
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+{% include head.html %}
+<body class="flex flex-col min-h-screen">
+<h1 class="hidden">{{ site.title }}</h1>
+<main class="flex-1">
+    {% include navbar.html %}
+    {{ content }}
+</main>
+{% include footer.html %}
+<script src="{{ site.srcurl }}{{ site.js_path }}alpine.min.js" defer></script>
+<script src="{{ site.srcurl }}{{ site.js_path }}scroll-animations.js"></script>
+</body>
+</html>

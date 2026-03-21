@@ -1,0 +1,68 @@
+<nav class="bg-gray-900" x-data="{ open: false, dropdown: false }">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <a class="flex items-center gap-2 text-white font-bold text-lg" href="/">
+                <img src="{{ site.srcurl }}{{ site.image_path }}logo/logo.svg" alt="" width="30" height="25">
+                {{ site.title }}
+            </a>
+
+            <!-- Desktop menu -->
+            <div class="hidden lg:flex items-center gap-1">
+                <a class="px-3 py-2 text-sm text-gray-300 hover:text-white transition" href="{{ site.srcurl }}/">Home</a>
+                <a class="px-3 py-2 text-sm text-gray-300 hover:text-white transition" href="{{ site.srcurl }}/blog">Blog</a>
+
+                <!-- Dropdown -->
+                <div class="relative" @click.away="dropdown = false">
+                    <button class="px-3 py-2 text-sm text-gray-300 hover:text-white transition flex items-center gap-1"
+                            @click="dropdown = !dropdown">
+                        + Exemplos de Páginas
+                        <svg class="w-4 h-4 transition-transform" :class="dropdown && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 z-50"
+                         x-show="dropdown"
+                         x-transition:enter="transition ease-out duration-100"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-75"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         x-cloak>
+                        {% for post in site.posts limit:1 %}
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="{{ site.srcurl }}{{ post.url }}">Artigo do Blog</a>
+                        {% endfor %}
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="{{ site.srcurl }}/404">404</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="{{ site.srcurl }}/sobre">Sobre</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="{{ site.srcurl }}/contato">Contato</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="{{ site.srcurl }}/faq">FAQ</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile hamburger -->
+            <button class="lg:hidden text-gray-300 hover:text-white" @click="open = !open" aria-label="Toggle navigation">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    <path x-show="open" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="lg:hidden" x-show="open" x-collapse x-cloak>
+        <div class="px-4 pb-4 space-y-1">
+            <a class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" href="{{ site.srcurl }}/">Home</a>
+            <a class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" href="{{ site.srcurl }}/blog">Blog</a>
+            {% for post in site.posts limit:1 %}
+            <a class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" href="{{ site.srcurl }}{{ post.url }}">Artigo do Blog</a>
+            {% endfor %}
+            <a class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" href="{{ site.srcurl }}/404">404</a>
+            <a class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" href="{{ site.srcurl }}/sobre">Sobre</a>
+            <a class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" href="{{ site.srcurl }}/contato">Contato</a>
+            <a class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" href="{{ site.srcurl }}/faq">FAQ</a>
+        </div>
+    </div>
+</nav>
