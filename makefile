@@ -37,7 +37,7 @@ setup-arm: ## Setup the project for ARM
 	  -p 4000:4000 \
 	  -p 35729:35729 \
 	  -e RUBYOPT="-W0" \
-	  arm64v8/ruby:2.7 \
+	  arm64v8/ruby:3.1 \
 	  /bin/sh -c "\
 	    curl -skLO https://github.com/tailwindlabs/tailwindcss/releases/download/$(TAILWIND_VERSION)/tailwindcss-linux-arm64 && \
 	    chmod +x tailwindcss-linux-arm64 && \

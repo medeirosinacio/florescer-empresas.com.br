@@ -19,6 +19,9 @@ vendor
 /.gem-cache/
 tailwindcss
 node_modules
+package.json
+package-lock.json
 assets/css/output.css
 tailwindcss-linux-arm64
 /tailwindcss-linux-arm64
+tailwindcss-macos-arm64
