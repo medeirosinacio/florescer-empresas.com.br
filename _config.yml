@@ -8,17 +8,13 @@ url: https://medeirosinacio.github.io
 srcurl: "/florescer-empresas.com.br"
 lang: pt-BR
 locale: pt_BR
-author: Florescer Desenvolvimento Humano
-description: "Transformando relações de trabalho através do cuidado com o humano. Psicólogas especializadas em desenvolvimento humano organizacional."
+author: Fernanda Strof e Isis Couto
+description: "Psicólogas especializadas em desenvolvimento humano organizacional. Treinamentos, lideranças e saúde mental para empresas que colocam pessoas no centro."
 google_analytics: ""
 published: true
 
-# Staticforms form contact email
+# Staticforms form contact
 staticforms_api_key: b805ad43-5c0a-42f4-bcb7-f08c89da57b3
-
-# Paginator configuration
-paginate: 3
-paginate_path: "/blog/pagina/:num"
 
 # Social Media
 social:
@@ -27,20 +23,22 @@ social:
     - https://www.instagram.com/florescer.dh/
     - https://www.linkedin.com/company/florescer-dh/
 
+instagram_url: "https://www.instagram.com/florescer.dh/"
+linkedin_url:  "https://www.linkedin.com/company/florescer-dh/"
+whatsapp_url:  "https://wa.me/5541999999999"
+
 # Site Paths
-post_path: /assets/images/posts/
-icon_path: /assets/icons/
+post_path:  /assets/images/posts/
+icon_path:  /assets/icons/
 image_path: /assets/images/
-css_path: /assets/css/
-js_path: /assets/scripts/
+css_path:   /assets/css/
+js_path:    /assets/scripts/
 
 # Build settings
 markdown: kramdown
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-paginate
 exclude:
   - .github
   - Gemfile

@@ -1,117 +1,897 @@
 ---
 layout: default
+title: Florescer Desenvolvimento Humano — Psicologia Organizacional
+description: "Transformamos relações de trabalho através do cuidado com o humano. Treinamentos, desenvolvimento de lideranças e saúde mental para empresas."
 ---
 
-<!-- Hero -->
-<section class="bg-gray-900 py-12 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-animate>
-        <div class="flex flex-col xl:flex-row items-center gap-12">
-            <div class="flex-1 text-center xl:text-left">
-                <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">
-                    Um template Jekyll completo com Tailwind CSS para Github Pages!
-                </h1>
-                <p class="text-lg text-white/60 mb-8">
-                    Você esta na URL base do template, totalmente em HTML5 e Tailwind CSS, esta pronto para começar seu projeto?!
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center xl:justify-start">
-                    <a class="inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition"
-                       href="#features">Documentação</a>
-                    <a class="inline-flex items-center justify-center px-6 py-3 border border-white/30 text-white hover:bg-white/10 font-semibold rounded-lg transition"
-                       target="_blank"
-                       href="https://github.com/medeirosinacio/jekyll-bootstrap-github-pages">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                        Ver mais
-                    </a>
-                </div>
-            </div>
-            <div class="hidden xl:block flex-1">
-                <img class="rounded-xl w-full max-w-lg mx-auto"
-                     src="{{ site.srcurl }}{{ site.image_path }}600x400.png"
-                     alt="Banner">
-            </div>
-        </div>
-    </div>
-</section>
+<script>
+  function maskTel(input) {
+    let value = input.value.replace(/\D/g, "").substring(0, 11);
+    if (value.length > 10) {
+      value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+    } else {
+      value = value.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
+    }
+    input.value = value;
+  }
 
-<!-- Features -->
-<section class="py-16" id="features" data-animate>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row gap-12">
-            <div class="lg:w-1/3">
-                <h2 class="text-2xl font-extrabold">Leia sobre as tecnologias integradas</h2>
-            </div>
-            <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <a class="group" href="https://jekyllrb.com/docs/" target="_blank" data-animate>
-                    <div class="feature-icon mb-3">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary transition">Jekyll</h3>
-                    <p class="text-gray-600 mt-1">Jekyll é um gerador de sites estáticos. Ele pega o texto escrito em sua linguagem de marcação favorita e usa layouts para criar um site estático.</p>
-                </a>
-                <a class="group" href="https://tailwindcss.com/" target="_blank" data-animate>
-                    <div class="feature-icon mb-3">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary transition">Tailwind CSS</h3>
-                    <p class="text-gray-600 mt-1">Tailwind CSS é um framework utility-first para construir interfaces customizadas rapidamente, sem sair do HTML.</p>
-                </a>
-                <a class="group" href="#" target="_blank" data-animate>
-                    <div class="feature-icon mb-3">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary transition">API's</h3>
-                    <p class="text-gray-600 mt-1">Integração completa com API's externas e gratuitas para geração de comentarios, via Disqus, contadores de visualização e mais!</p>
-                </a>
-                <a class="group" href="https://pages.github.com/" target="_blank" data-animate>
-                    <div class="feature-icon mb-3">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary transition">Github Pages</h3>
-                    <p class="text-gray-600 mt-1">As páginas do GitHub são páginas da web públicas hospedadas gratuitamente no github.io ou em um domínio personalizado de sua escolha.</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+  function validateEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function validatePhone(v) { return /^\(\d{2}\) \d{4,5}-\d{4}$/.test(v); }
 
-<!-- Testimonial -->
-<section class="py-16 bg-gray-50" data-animate>
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-xl italic text-gray-700 mb-6">
-            "Esse template vem com configuração pronta para você montar seu blog ou publicar seus artigos."
+  async function contatoHandleSubmit(form) {
+    const btn = document.getElementById('contato-submit-btn');
+    const errorBox = document.getElementById('contato-error-box');
+    const errorMsg = document.getElementById('contato-error-msg');
+    errorBox.classList.add('hidden');
+
+    const name    = document.getElementById('contato-name').value.trim();
+    const email   = document.getElementById('contato-email').value.trim();
+    const phone   = document.getElementById('contato-phone').value.trim();
+    const message = document.getElementById('contato-message').value.trim();
+
+    if (name.length < 3)         { errorMsg.textContent = 'Nome deve ter ao menos 3 caracteres.'; errorBox.classList.remove('hidden'); return false; }
+    if (!validateEmail(email))   { errorMsg.textContent = 'Informe um e-mail válido.'; errorBox.classList.remove('hidden'); return false; }
+    if (!validatePhone(phone))   { errorMsg.textContent = 'Telefone inválido. Use (XX) XXXXX-XXXX.'; errorBox.classList.remove('hidden'); return false; }
+    if (message.length < 10)     { errorMsg.textContent = 'Mensagem muito curta (mínimo 10 caracteres).'; errorBox.classList.remove('hidden'); return false; }
+
+    btn.setAttribute('disabled', 'true');
+    try {
+      const res  = await fetch('https://api.staticforms.xyz/submit', {
+        method: 'POST',
+        body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const json = await res.json();
+      if (json.success) {
+        setTimeout(() => {
+          document.getElementById('contato-success-modal').classList.remove('hidden');
+          btn.removeAttribute('disabled');
+        }, 1200);
+      } else {
+        errorMsg.textContent = 'Erro no envio. Tente novamente.';
+        errorBox.classList.remove('hidden');
+        btn.removeAttribute('disabled');
+      }
+    } catch (e) {
+      errorMsg.textContent = 'Erro de conexão. Tente novamente.';
+      errorBox.classList.remove('hidden');
+      btn.removeAttribute('disabled');
+    }
+  }
+</script>
+
+<div class="h-16 "></div>
+
+<!-- ============================================================
+     HERO — foto das duas psicólogas juntas
+     ============================================================ -->
+<section class="relative overflow-hidden bg-warm-50 py-20 md:py-28 lg:py-32 ">
+
+  <div class="blob w-[500px] h-[500px] bg-sage-100 -top-32 -left-40 opacity-60 "></div>
+  <div class="blob w-80 h-80 bg-blush-100 bottom-0 right-0 opacity-50 "></div>
+
+  <div class="relative max-w-5xl mx-auto px-6 ">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center ">
+
+      <!-- Coluna texto -->
+      <div data-animate>
+        <span class="section-label mb-5 block ">Psicologia Organizacional</span>
+
+        <h1 class="font-serif text-[2.6rem] md:text-5xl xl:text-[3.5rem] font-semibold text-texto-900 leading-[1.15] mb-6 ">
+          Empresas mais<br>humanas começam<br>
+          pelas <em class="heading-accent ">pessoas</em>
+        </h1>
+
+        <p class="text-texto-500 text-lg leading-relaxed mb-9 max-w-md ">
+          Fernanda Strof e Isis Couto trabalham junto a organizações que acreditam que
+          saúde mental e produtividade caminham juntas — não em lados opostos.
         </p>
-        <div class="flex items-center justify-center gap-3">
-            <img class="w-10 h-10 rounded-full" src="{{ site.srcurl }}{{ site.image_path }}40x40.png" alt="Avatar">
-            <div class="font-bold text-gray-900">
-                Douglas Medeiros
-                <span class="text-primary mx-1">/</span>
-                CEO da Poha Toda
-            </div>
+
+        <div class="flex flex-wrap gap-3 ">
+          <a href="#contato"
+             class="inline-flex items-center gap-2 bg-sage-500 hover:bg-sage-600 text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-sage-200/60">
+            Solicitar proposta
+            <svg class="w-4 h-4 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="#servicos"
+             class="inline-flex items-center gap-2 text-texto-600 hover:text-sage-600 font-semibold text-sm px-7 py-3.5 rounded-full border border-warm-300 hover:border-sage-200 hover:bg-sage-50 transition-all duration-200">
+            Ver serviços
+          </a>
         </div>
+      </div>
+
+      <!-- Coluna foto — as duas psicólogas juntas -->
+      <div class="relative " data-animate data-animate-delay="200">
+
+        <!-- Moldura principal -->
+        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-warm-300/40 ">
+          <img src="{{ site.srcurl }}{{ site.image_path }}foto-08.jpg"
+               alt="Fernanda Strof e Isis Couto — Florescer Desenvolvimento Humano"
+               class="w-full h-[420px] md:h-[500px] object-cover object-[center_15%] "
+               width="600" height="500">
+          <!-- overlay suave no rodapé -->
+          <div class="absolute inset-0 bg-gradient-to-t from-sage-900/30 via-transparent to-transparent "></div>
+          <!-- legenda sobre a foto -->
+          <div class="absolute bottom-5 left-5 right-5 ">
+            <div class="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm ">
+              <span class="w-2 h-2 bg-sage-400 rounded-full flex-shrink-0 "></span>
+              <span class="text-xs font-semibold text-texto-700 tracking-wide ">Fernanda Strof &amp; Isis Couto</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badge flutuante -->
+        <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg shadow-warm-200/60 border border-warm-100 p-4 flex items-center gap-3">
+          <div class="w-9 h-9 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0 ">
+            <svg class="w-4.5 h-4.5 text-sage-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-texto-800 leading-none mb-0.5 ">Abordagem humanizada</p>
+            <p class="text-xs text-texto-400 ">para cada empresa</p>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Blog preview -->
-<section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12" data-animate>
-            <h2 class="text-2xl font-extrabold">Monte seu blog</h2>
-            <p class="text-lg text-gray-500 mt-2 max-w-2xl mx-auto">
-                Crie e compartilhe com o mundo o que você é, tenha um sistema de paginação, comentarios e
-                visualizações! Tudo gerado automaticamente pronto para publicar.
-            </p>
-        </div>
-        <div class="flex flex-wrap -mx-3" data-animate>
-            {% include blog-recents-posts.html %}
-        </div>
-        <!-- CTA Banner -->
-        <div class="bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-6 sm:p-10 mt-12" data-animate>
-            <div class="flex flex-col xl:flex-row items-center justify-between text-center xl:text-left gap-4">
-                <div>
-                    <h3 class="text-xl font-bold text-white">Banner para anuncios de produtos ou propaganda</h3>
-                    <p class="text-white/60">Exemplo de banner para seu site.</p>
-                </div>
-            </div>
-        </div>
+<!-- ============================================================
+     QUEM SOMOS
+     ============================================================ -->
+<section id="quem-somos" class="py-24 md:py-32 bg-white ">
+  <div class="max-w-5xl mx-auto px-6 ">
+
+    <div class="text-center mb-16 " data-animate>
+      <span class="section-label ">Sobre a Florescer</span>
+      <h2 class="font-serif text-3xl md:text-[2.6rem] font-semibold text-texto-900 mt-3 leading-tight ">
+        Do encontro entre escuta clínica<br>
+        e realidade <em class="heading-accent ">organizacional</em>
+      </h2>
+      <div class="section-divider "></div>
     </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 ">
+
+      <div class="relative " data-animate>
+        <div class="rounded-3xl overflow-hidden shadow-lg shadow-warm-200/50 ">
+          <img src="{{ site.srcurl }}{{ site.image_path }}foto-09.jpg"
+               alt="Florescer — desenvolvimento humano nas organizações"
+               class="w-full h-[380px] object-cover object-[center_20%] "
+               width="600" height="380">
+        </div>
+        <!-- detalhe decorativo -->
+        <div class="absolute -bottom-5 -right-5 w-24 h-24 bg-sage-100 rounded-2xl -z-10 "></div>
+        <div class="absolute -top-5 -left-5 w-16 h-16 bg-blush-100 rounded-xl -z-10 "></div>
+      </div>
+
+      <div class="space-y-5 " data-animate data-animate-delay="200">
+        <p class="text-texto-700 text-lg leading-relaxed ">
+          A <strong class="text-texto-900 font-semibold ">Florescer Desenvolvimento Humano</strong> nasce
+          do encontro entre <strong>Fernanda Strof</strong> e <strong>Isis Couto</strong> — psicólogas
+          que acreditam que o desenvolvimento das empresas passa, necessariamente, pelo desenvolvimento
+          das pessoas.
+        </p>
+        <p class="text-texto-500 leading-relaxed ">
+          Atuamos junto a organizações que desejam ir além de modelos tradicionais: promovendo ambientes
+          mais saudáveis, conscientes e sustentáveis, onde produtividade e saúde mental não sejam opostos.
+        </p>
+        <p class="text-texto-500 leading-relaxed ">
+          Nosso olhar é clínico, estratégico e, acima de tudo, humano. Cada intervenção é construída
+          sob medida para a cultura, os desafios e as pessoas de cada empresa.
+        </p>
+        <div class="pt-3 ">
+          <a href="#contato"
+             class="inline-flex items-center gap-2 text-sage-600 font-semibold text-sm hover:text-sage-700 transition-colors ">
+            Converse conosco
+            <svg class="w-4 h-4 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 pilares -->
+    <div class="grid md:grid-cols-3 gap-5 ">
+
+      <div class="group bg-warm-50 hover:bg-sage-50 rounded-2xl p-7 border border-warm-200/60 hover:border-sage-200 transition-all duration-300"
+           data-animate data-animate-delay="100">
+        <div class="w-12 h-12 bg-sage-100 group-hover:bg-sage-200 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+          <svg class="w-6 h-6 text-sage-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-2 ">👂 Escuta Qualificada</h3>
+        <p class="text-texto-500 text-sm leading-relaxed ">
+          Cada empresa tem sua história. Começamos sempre ouvindo antes de propor qualquer solução.
+        </p>
+      </div>
+
+      <div class="group bg-warm-50 hover:bg-blush-50 rounded-2xl p-7 border border-warm-200/60 hover:border-blush-200 transition-all duration-300"
+           data-animate data-animate-delay="200">
+        <div class="w-12 h-12 bg-blush-100 group-hover:bg-blush-200 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+          <svg class="w-6 h-6 text-blush-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-2 ">🎯 Personalização</h3>
+        <p class="text-texto-500 text-sm leading-relaxed ">
+          Não acreditamos em soluções prontas. Cada intervenção é construída para o contexto real da empresa.
+        </p>
+      </div>
+
+      <div class="group bg-warm-50 hover:bg-warm-100 rounded-2xl p-7 border border-warm-200/60 hover:border-warm-300 transition-all duration-300"
+           data-animate data-animate-delay="300">
+        <div class="w-12 h-12 bg-warm-200 group-hover:bg-warm-300 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+          <svg class="w-6 h-6 text-warm-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-2 ">🌱 Transformação Real</h3>
+        <p class="text-texto-500 text-sm leading-relaxed ">
+          Compromisso com mudanças sustentáveis na cultura — não intervenções pontuais sem continuidade.
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
+
+<!-- ============================================================
+     SERVIÇOS
+     ============================================================ -->
+<section id="servicos" class="py-24 md:py-32 bg-warm-50 ">
+  <div class="max-w-5xl mx-auto px-6 ">
+
+    <div class="text-center mb-16 " data-animate>
+      <span class="section-label ">O que oferecemos</span>
+      <h2 class="font-serif text-3xl md:text-[2.6rem] font-semibold text-texto-900 mt-3 leading-tight ">
+        Nossas <em class="heading-accent ">soluções</em>
+      </h2>
+      <p class="mt-4 text-texto-500 text-base max-w-lg mx-auto leading-relaxed ">
+        Construídas de forma personalizada, com escuta ativa e compromisso com resultados reais.
+      </p>
+      <div class="section-divider "></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5 mb-5 ">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl p-8 border border-warm-100 hover:border-sage-200 hover:shadow-lg hover:shadow-sage-100/40 transition-all duration-300"
+           data-animate data-animate-delay="100">
+        <div class="w-12 h-12 bg-sage-100 rounded-2xl flex items-center justify-center mb-5 flex-shrink-0 ">
+          <svg class="w-5.5 h-5.5 text-sage-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-3 ">
+          Treinamentos e Desenvolvimento de Pessoas
+        </h3>
+        <p class="text-texto-400 text-sm leading-relaxed ">
+          Capacitações voltadas para habilidades emocionais, relacionais e comportamentais
+          no ambiente de trabalho — práticas e aplicáveis ao dia a dia da equipe.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl p-8 border border-warm-100 hover:border-sage-200 hover:shadow-lg hover:shadow-sage-100/40 transition-all duration-300"
+           data-animate data-animate-delay="200">
+        <div class="w-12 h-12 bg-blush-100 rounded-2xl flex items-center justify-center mb-5 flex-shrink-0 ">
+          <svg class="w-5.5 h-5.5 text-blush-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-3 ">
+          Desenvolvimento de Lideranças
+        </h3>
+        <p class="text-texto-400 text-sm leading-relaxed mb-4 ">
+          Formação de líderes mais conscientes, preparados para gerir com escuta,
+          clareza e responsabilidade.
+        </p>
+        <div class="flex flex-wrap gap-1.5 ">
+          <span class="text-xs bg-sage-50 text-sage-600 border border-sage-100 px-2.5 py-1 rounded-full ">CNV</span>
+          <span class="text-xs bg-sage-50 text-sage-600 border border-sage-100 px-2.5 py-1 rounded-full ">Cultura</span>
+          <span class="text-xs bg-sage-50 text-sage-600 border border-sage-100 px-2.5 py-1 rounded-full ">Conflitos</span>
+          <span class="text-xs bg-sage-50 text-sage-600 border border-sage-100 px-2.5 py-1 rounded-full ">Feedbacks</span>
+          <span class="text-xs bg-sage-50 text-sage-600 border border-sage-100 px-2.5 py-1 rounded-full ">IE</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl p-8 border border-warm-100 hover:border-sage-200 hover:shadow-lg hover:shadow-sage-100/40 transition-all duration-300"
+           data-animate data-animate-delay="300">
+        <div class="w-12 h-12 bg-warm-200 rounded-2xl flex items-center justify-center mb-5 flex-shrink-0 ">
+          <svg class="w-5.5 h-5.5 text-warm-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-3 ">
+          Palestras e Workshops
+        </h3>
+        <p class="text-texto-400 text-sm leading-relaxed ">
+          Conteúdos acessíveis e transformadores sobre saúde mental no trabalho,
+          promovendo reflexão e consciência coletiva.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-2xl p-8 border border-warm-100 hover:border-sage-200 hover:shadow-lg hover:shadow-sage-100/40 transition-all duration-300"
+           data-animate data-animate-delay="400">
+        <div class="w-12 h-12 bg-sage-100 rounded-2xl flex items-center justify-center mb-5 flex-shrink-0 ">
+          <svg class="w-5.5 h-5.5 text-sage-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-3 ">
+          Rodas de Conversa
+        </h3>
+        <p class="text-texto-400 text-sm leading-relaxed ">
+          Espaços de escuta e troca que fortalecem vínculos, promovem pertencimento
+          e ampliam a consciência coletiva nas equipes.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Card 5 — destaque -->
+    <div class="bg-sage-700 rounded-2xl p-8 flex flex-col md:flex-row items-start md:items-center gap-6 "
+         data-animate data-animate-delay="500">
+      <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0 ">
+        <svg class="w-6 h-6 text-white " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+        </svg>
+      </div>
+      <div class="flex-1 ">
+        <h3 class="font-serif text-xl font-semibold text-white mb-2 ">Apoio a RH e Gestão de Pessoas</h3>
+        <p class="text-sage-300 text-sm leading-relaxed ">
+          Atuação estratégica junto ao RH e DH para melhoria das relações, comunicação interna
+          e clima organizacional — com foco em resultados sustentáveis de longo prazo.
+        </p>
+      </div>
+      <a href="#contato"
+         class="flex-shrink-0 bg-white hover:bg-warm-50 text-sage-700 text-sm font-semibold px-6 py-2.5 rounded-full transition-colors whitespace-nowrap">
+        Saiba mais
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EQUIPE
+     ============================================================ -->
+<section id="equipe" class="py-24 md:py-32 bg-white ">
+  <div class="max-w-5xl mx-auto px-6 ">
+
+    <div class="text-center mb-16 " data-animate>
+      <span class="section-label ">Conheça as fundadoras</span>
+      <h2 class="font-serif text-3xl md:text-[2.6rem] font-semibold text-texto-900 mt-3 leading-tight ">
+        As psicólogas por trás<br>da <em class="heading-accent ">Florescer</em>
+      </h2>
+      <div class="section-divider "></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto ">
+
+      <!-- Fernanda — foto-01 -->
+      <div class="group " data-animate data-animate-delay="100">
+        <div class="relative rounded-3xl overflow-hidden mb-6 shadow-md shadow-warm-200/50 group-hover:shadow-xl group-hover:shadow-sage-100/50 transition-all duration-400">
+          <img src="{{ site.srcurl }}{{ site.image_path }}foto-01.jpg"
+               alt="Fernanda Strof — Psicóloga Organizacional"
+               class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+               width="400" height="320">
+          <div class="absolute inset-0 bg-gradient-to-t from-texto-900/50 via-transparent to-transparent "></div>
+          <div class="absolute bottom-5 left-5 ">
+            <span class="inline-block bg-sage-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full tracking-wide">
+              Psicóloga Organizacional
+            </span>
+          </div>
+        </div>
+        <div class="px-1 ">
+          <h3 class="font-serif text-2xl font-semibold text-texto-900 mb-2 ">Fernanda Strof</h3>
+          <p class="text-texto-500 text-sm leading-relaxed ">
+            Especialista em desenvolvimento humano e relações de trabalho. Une escuta clínica
+            e visão estratégica para criar ambientes organizacionais mais saudáveis e eficientes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Isis — foto-04 (cabelo cacheado) -->
+      <div class="group " data-animate data-animate-delay="200">
+        <div class="relative rounded-3xl overflow-hidden mb-6 shadow-md shadow-warm-200/50 group-hover:shadow-xl group-hover:shadow-sage-100/50 transition-all duration-400">
+          <img src="{{ site.srcurl }}{{ site.image_path }}foto-04.jpg"
+               alt="Isis Couto — Psicóloga Clínica e Organizacional"
+               class="w-full h-80 object-cover object-[top_8%] group-hover:scale-105 transition-transform duration-500 ease-out"
+               width="400" height="320">
+          <div class="absolute inset-0 bg-gradient-to-t from-texto-900/50 via-transparent to-transparent "></div>
+          <div class="absolute bottom-5 left-5 ">
+            <span class="inline-block bg-blush-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full tracking-wide">
+              Psicóloga Clínica e Organizacional
+            </span>
+          </div>
+        </div>
+        <div class="px-1 ">
+          <h3 class="font-serif text-2xl font-semibold text-texto-900 mb-2 ">Isis Couto</h3>
+          <p class="text-texto-500 text-sm leading-relaxed ">
+            Traz a profundidade da escuta clínica para o universo das organizações. Foco em
+            saúde mental, vínculos relacionais e construção de culturas corporativas mais conscientes.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DIFERENCIAL
+     ============================================================ -->
+<section id="diferencial" class="py-24 md:py-32 bg-warm-50 ">
+  <div class="max-w-5xl mx-auto px-6 ">
+
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ">
+
+      <div class="relative " data-animate>
+        <div class="rounded-3xl overflow-hidden shadow-lg shadow-warm-200/40 ">
+          <img src="{{ site.srcurl }}{{ site.image_path }}foto-07.jpg"
+               alt="Nossa forma de trabalhar — Florescer"
+               class="w-full h-[420px] object-cover object-center "
+               width="600" height="420">
+        </div>
+        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-sage-100 rounded-2xl -z-10 "></div>
+      </div>
+
+      <div data-animate data-animate-delay="200">
+        <span class="section-label mb-4 block ">Por que escolher a Florescer</span>
+        <h2 class="font-serif text-3xl md:text-[2.6rem] font-semibold text-texto-900 mb-8 leading-tight ">
+          Nossa <em class="heading-accent ">forma</em><br>de trabalhar
+        </h2>
+
+        <div class="space-y-5 ">
+
+          <div class="flex items-start gap-4 ">
+            <div class="w-9 h-9 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 ">
+              <svg class="w-4 h-4 text-sage-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-texto-800 text-sm mb-1 ">🔬 Integração técnica + olhar humano</p>
+              <p class="text-texto-500 text-sm leading-relaxed ">
+                Unimos conhecimento clínico em psicologia com sensibilidade para a cultura de cada organização.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 ">
+            <div class="w-9 h-9 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 ">
+              <svg class="w-4 h-4 text-sage-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-texto-800 text-sm mb-1 ">🧠 Experiência clínica aplicada ao corporativo</p>
+              <p class="text-texto-500 text-sm leading-relaxed ">
+                A formação em clínica enriquece cada intervenção organizacional com profundidade e rigor.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 ">
+            <div class="w-9 h-9 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 ">
+              <svg class="w-4 h-4 text-sage-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-texto-800 text-sm mb-1 ">🤝 Abordagem ética, sensível e estratégica</p>
+              <p class="text-texto-500 text-sm leading-relaxed ">
+                Respeitamos a complexidade humana e os objetivos do negócio — sem abrir mão da ética.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 ">
+            <div class="w-9 h-9 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 ">
+              <svg class="w-4 h-4 text-sage-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-texto-800 text-sm mb-1 ">🌱 Foco em mudanças culturais duradouras</p>
+              <p class="text-texto-500 text-sm leading-relaxed ">
+                Não trabalhamos para "treinar pessoas" — trabalhamos para transformar relações de trabalho.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     POR QUE INVESTIR
+     ============================================================ -->
+<section id="por-que" class="relative py-24 md:py-32 bg-sage-700 overflow-hidden ">
+
+  <div class="blob w-[450px] h-[450px] bg-sage-600 -top-24 -right-24 opacity-30 "></div>
+  <div class="blob w-72 h-72 bg-blush-400 -bottom-16 -left-16 opacity-20 "></div>
+
+  <div class="relative max-w-5xl mx-auto px-6 ">
+
+    <div class="text-center mb-14 " data-animate>
+      <span class="block text-xs font-semibold tracking-[0.3em] uppercase text-sage-300 mb-4 ">
+        O custo do descuido
+      </span>
+      <h2 class="font-serif text-3xl md:text-[2.6rem] xl:text-[3rem] font-semibold text-white leading-tight mb-5 ">
+        Quando pessoas não estão bem,<br>
+        <em class="italic text-sage-300 ">empresas também sofrem</em>
+      </h2>
+      <p class="text-sage-200 text-base max-w-xl mx-auto leading-relaxed ">
+        Cuidar da saúde mental não é apenas bem-estar — é estratégia inteligente de gestão.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14 ">
+
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 "
+           data-animate data-animate-delay="100">
+        <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center mb-4 ">
+          <svg class="w-5 h-5 text-sage-200 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-4 4v-4z"/>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-white text-sm mb-2 ">💬 Comunicação falha</h4>
+        <p class="text-sage-300 text-xs leading-relaxed ">
+          Mal-entendidos aumentam, informação não flui e a colaboração se deteriora.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 "
+           data-animate data-animate-delay="200">
+        <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center mb-4 ">
+          <svg class="w-5 h-5 text-sage-200 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-white text-sm mb-2 ">⚡ Conflitos aumentam</h4>
+        <p class="text-sage-300 text-xs leading-relaxed ">
+          Tensões não resolvidas viram crises. O ambiente se torna hostil e desgastante.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 "
+           data-animate data-animate-delay="300">
+        <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center mb-4 ">
+          <svg class="w-5 h-5 text-sage-200 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-white text-sm mb-2 ">📉 Engajamento cai</h4>
+        <p class="text-sage-300 text-xs leading-relaxed ">
+          Pessoas desmotivadas entregam menos. A cultura de alta performance se desfaz.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 "
+           data-animate data-animate-delay="400">
+        <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center mb-4 ">
+          <svg class="w-5 h-5 text-sage-200 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-white text-sm mb-2 ">🔥 Produtividade insustentável</h4>
+        <p class="text-sage-300 text-xs leading-relaxed ">
+          Resultados de curto prazo geram burnout. Não existe sustentabilidade sem cuidado.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="text-center max-w-xl mx-auto " data-animate>
+      <blockquote class="font-serif text-xl md:text-2xl text-white font-medium italic leading-relaxed mb-8 ">
+        "Produtividade sem saúde não se sustenta.<br>
+        Desenvolvimento sem escuta não acontece."
+      </blockquote>
+      <a href="#contato"
+         class="inline-flex items-center gap-2 bg-white hover:bg-warm-50 text-sage-700 font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-sage-900/20">
+        Vamos conversar
+        <svg class="w-4 h-4 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     MISSÃO, VISÃO E VALORES
+     ============================================================ -->
+<section id="missao" class="py-24 md:py-32 bg-white ">
+  <div class="max-w-5xl mx-auto px-6 ">
+
+    <div class="text-center mb-16 " data-animate>
+      <span class="section-label ">Nossa essência</span>
+      <h2 class="font-serif text-3xl md:text-[2.6rem] font-semibold text-texto-900 mt-3 leading-tight ">
+        Missão, Visão &amp; <em class="heading-accent ">Valores</em>
+      </h2>
+      <div class="section-divider "></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 ">
+
+      <div class="bg-warm-50 rounded-2xl p-8 border border-warm-100 hover:border-sage-200 hover:shadow-md hover:shadow-sage-100/30 transition-all duration-300"
+           data-animate data-animate-delay="100">
+        <div class="w-10 h-10 bg-sage-100 rounded-xl flex items-center justify-center mb-5 ">
+          <svg class="w-5 h-5 text-sage-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-3 ">🌿 Missão</h3>
+        <p class="text-texto-500 text-sm leading-relaxed ">
+          Promover o desenvolvimento humano nas organizações por meio de práticas que integrem
+          saúde mental, comunicação e relações de trabalho mais conscientes.
+        </p>
+      </div>
+
+      <div class="bg-warm-50 rounded-2xl p-8 border border-warm-100 hover:border-sage-200 hover:shadow-md hover:shadow-sage-100/30 transition-all duration-300"
+           data-animate data-animate-delay="200">
+        <div class="w-10 h-10 bg-blush-100 rounded-xl flex items-center justify-center mb-5 ">
+          <svg class="w-5 h-5 text-blush-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-3 ">🔭 Visão</h3>
+        <p class="text-texto-500 text-sm leading-relaxed ">
+          Ser referência na construção de culturas organizacionais mais humanas, onde a saúde mental
+          seja prioridade — não exceção.
+        </p>
+      </div>
+
+      <div class="bg-warm-50 rounded-2xl p-8 border border-warm-100 hover:border-sage-200 hover:shadow-md hover:shadow-sage-100/30 transition-all duration-300"
+           data-animate data-animate-delay="300">
+        <div class="w-10 h-10 bg-warm-200 rounded-xl flex items-center justify-center mb-5 ">
+          <svg class="w-5 h-5 text-warm-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-texto-900 mb-4 ">💎 Valores</h3>
+        <ul class="space-y-2 ">
+          {% assign valores = "Centralidade no humano,Saúde mental como prioridade,Ética e responsabilidade,Comunicação consciente,Transformação com propósito,Ambientes seguros e respeitosos,Desenvolvimento contínuo" | split: "," %}
+          {% for v in valores %}
+          <li class="flex items-center gap-2.5 text-texto-600 text-sm ">
+            <span class="w-1.5 h-1.5 bg-sage-400 rounded-full flex-shrink-0 "></span>
+            {{ v }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTATO
+     ============================================================ -->
+<section id="contato" class="py-24 md:py-32 bg-warm-50 ">
+  <div class="max-w-5xl mx-auto px-6 ">
+
+    <div class="relative bg-white rounded-[2rem] overflow-hidden shadow-sm border border-warm-100 ">
+
+      <!-- faixa decorativa topo -->
+      <div class="h-1.5 bg-gradient-to-r from-sage-400 via-sage-500 to-blush-400 "></div>
+
+      <div class="p-10 md:p-14 lg:p-16 ">
+
+        <!-- blobs internos suaves -->
+        <div class="blob w-72 h-72 bg-sage-100 -top-10 -right-10 opacity-50 "></div>
+        <div class="blob w-56 h-56 bg-blush-100 -bottom-8 -left-8 opacity-40 "></div>
+
+        <div class="relative grid lg:grid-cols-2 gap-12 lg:gap-16 ">
+
+          <!-- Lado esquerdo — CTA + canais -->
+          <div data-animate>
+            <span class="section-label mb-4 block ">Entre em contato</span>
+            <h2 class="font-serif text-3xl md:text-4xl font-semibold text-texto-900 mb-4 leading-tight ">
+              Vamos construir<br>
+              <em class="heading-accent ">isso juntos?</em>
+            </h2>
+            <p class="text-texto-500 text-sm leading-relaxed mb-8 max-w-xs ">
+              Desenvolva uma proposta personalizada para a sua empresa.
+              Cada jornada começa com uma conversa.
+            </p>
+
+            <div class="space-y-3 ">
+
+              <a href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-4 rounded-2xl p-4 border border-warm-100 hover:border-sage-200 hover:bg-sage-50 transition-all duration-200 group">
+                <div class="w-10 h-10 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0 ">
+                  <svg class="w-5 h-5 text-sage-600 " fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs text-texto-400 mb-0.5 ">WhatsApp</p>
+                  <p class="text-sm font-medium text-texto-700 group-hover:text-sage-600 transition-colors ">Envie uma mensagem</p>
+                </div>
+              </a>
+
+              <a href="{{ site.instagram_url }}" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-4 rounded-2xl p-4 border border-warm-100 hover:border-blush-200 hover:bg-blush-50 transition-all duration-200 group">
+                <div class="w-10 h-10 bg-blush-100 rounded-xl flex items-center justify-center flex-shrink-0 ">
+                  <svg class="w-5 h-5 text-blush-500 " fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs text-texto-400 mb-0.5 ">Instagram</p>
+                  <p class="text-sm font-medium text-texto-700 group-hover:text-blush-500 transition-colors ">@florescer.dh</p>
+                </div>
+              </a>
+
+              <a href="mailto:{{ site.email }}"
+                 class="flex items-center gap-4 rounded-2xl p-4 border border-warm-100 hover:border-sage-200 hover:bg-sage-50 transition-all duration-200 group">
+                <div class="w-10 h-10 bg-warm-200 rounded-xl flex items-center justify-center flex-shrink-0 ">
+                  <svg class="w-5 h-5 text-warm-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs text-texto-400 mb-0.5 ">E-mail</p>
+                  <p class="text-sm font-medium text-texto-700 group-hover:text-sage-600 transition-colors ">{{ site.email }}</p>
+                </div>
+              </a>
+
+              <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-4 rounded-2xl p-4 border border-warm-100 hover:border-sage-200 hover:bg-sage-50 transition-all duration-200 group">
+                <div class="w-10 h-10 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0 ">
+                  <svg class="w-5 h-5 text-sage-600 " fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs text-texto-400 mb-0.5 ">LinkedIn</p>
+                  <p class="text-sm font-medium text-texto-700 group-hover:text-sage-600 transition-colors ">Florescer DH</p>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Lado direito — formulário -->
+          <div data-animate data-animate-delay="200">
+            <h3 class="font-serif text-xl font-semibold text-texto-900 mb-6 ">Envie uma mensagem</h3>
+
+            <form id="florescer-staticform" onsubmit="contatoHandleSubmit(this); return false;" novalidate>
+              <input type="hidden" name="accessKey" value="{{ site.staticforms_api_key }}">
+              <input type="hidden" name="subject" value="Contato via site — Florescer DH">
+              <input type="text" name="honeypot" style="display:none;" aria-hidden="true">
+
+              <div class="space-y-4 ">
+
+                <div>
+                  <label for="contato-name" class="block text-xs font-semibold text-texto-600 mb-1.5 tracking-wide ">
+                    Nome completo <span class="text-blush-400 ">*</span>
+                  </label>
+                  <input type="text" id="contato-name" name="name" required autocomplete="name"
+                         placeholder="Seu nome completo"
+                         class="w-full px-4 py-3 text-sm border border-warm-200 rounded-xl bg-warm-50 text-texto-800 placeholder-texto-300 focus:outline-none focus:ring-2 focus:ring-sage-200 focus:border-sage-400 transition-colors duration-200">
+                </div>
+
+                <div>
+                  <label for="contato-email" class="block text-xs font-semibold text-texto-600 mb-1.5 tracking-wide ">
+                    E-mail <span class="text-blush-400 ">*</span>
+                  </label>
+                  <input type="email" id="contato-email" name="email" required autocomplete="email"
+                         placeholder="seu@email.com.br"
+                         class="w-full px-4 py-3 text-sm border border-warm-200 rounded-xl bg-warm-50 text-texto-800 placeholder-texto-300 focus:outline-none focus:ring-2 focus:ring-sage-200 focus:border-sage-400 transition-colors duration-200">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 ">
+                  <div>
+                    <label for="contato-phone" class="block text-xs font-semibold text-texto-600 mb-1.5 tracking-wide ">
+                      Telefone <span class="text-blush-400 ">*</span>
+                    </label>
+                    <input type="tel" id="contato-phone" name="phone" required autocomplete="tel"
+                           placeholder="(XX) XXXXX-XXXX"
+                           oninput="maskTel(this)"
+                           class="w-full px-4 py-3 text-sm border border-warm-200 rounded-xl bg-warm-50 text-texto-800 placeholder-texto-300 focus:outline-none focus:ring-2 focus:ring-sage-200 focus:border-sage-400 transition-colors duration-200">
+                  </div>
+                  <div>
+                    <label for="contato-company" class="block text-xs font-semibold text-texto-600 mb-1.5 tracking-wide ">
+                      Empresa
+                    </label>
+                    <input type="text" id="contato-company" name="company" autocomplete="organization"
+                           placeholder="Nome da empresa"
+                           class="w-full px-4 py-3 text-sm border border-warm-200 rounded-xl bg-warm-50 text-texto-800 placeholder-texto-300 focus:outline-none focus:ring-2 focus:ring-sage-200 focus:border-sage-400 transition-colors duration-200">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="contato-message" class="block text-xs font-semibold text-texto-600 mb-1.5 tracking-wide ">
+                    Mensagem <span class="text-blush-400 ">*</span>
+                  </label>
+                  <textarea id="contato-message" name="message" required rows="4"
+                            placeholder="Conte um pouco sobre o que sua empresa precisa..."
+                            class="w-full px-4 py-3 text-sm border border-warm-200 rounded-xl bg-warm-50 text-texto-800 placeholder-texto-300 focus:outline-none focus:ring-2 focus:ring-sage-200 focus:border-sage-400 transition-colors duration-200 resize-none"></textarea>
+                </div>
+
+                <div id="contato-error-box" class="hidden bg-blush-50 border border-blush-200 rounded-xl px-4 py-3 ">
+                  <p id="contato-error-msg" class="text-xs text-blush-600 font-medium "></p>
+                </div>
+
+                <button type="submit" id="contato-submit-btn"
+                        class="btn-load-img w-full bg-sage-500 hover:bg-sage-600 text-white font-semibold text-sm py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-sage-200/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                  <span>Enviar mensagem</span>
+                  <img src="{{ site.srcurl }}/assets/gifs/load_white.gif" alt="Enviando…" class="hidden w-5 h-5 ">
+                </button>
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     MODAL SUCESSO
+     ============================================================ -->
+<div id="contato-success-modal"
+     class="fixed inset-0 z-50 flex items-center justify-center hidden ">
+  <div class="absolute inset-0 bg-texto-900/50 backdrop-blur-sm "
+       onclick="document.getElementById('contato-success-modal').classList.add('hidden')"></div>
+  <div class="relative bg-white rounded-3xl p-10 max-w-sm w-full mx-4 shadow-2xl text-center ">
+    <button onclick="document.getElementById('contato-success-modal').classList.add('hidden')"
+            class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-warm-100 hover:bg-warm-200 text-texto-400 transition-colors"
+            aria-label="Fechar">
+      <svg class="w-4 h-4 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="mb-5 ">
+      <svg class="checkmark " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+        <circle class="checkmark__circle " cx="26" cy="26" r="25" fill="none"/>
+        <path class="checkmark__check " fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+      </svg>
+    </div>
+    <h3 class="font-serif text-2xl font-semibold text-texto-900 mb-2 ">Mensagem enviada!</h3>
+    <p class="text-texto-400 text-sm leading-relaxed mb-6 ">
+      Obrigada pelo contato. Retornaremos em breve para conversar sobre como podemos ajudar.
+    </p>
+    <button onclick="document.getElementById('contato-success-modal').classList.add('hidden')"
+            class="bg-sage-500 hover:bg-sage-600 text-white font-semibold text-sm px-8 py-2.5 rounded-full transition-colors ">
+      Fechar
+    </button>
+  </div>
+</div>
