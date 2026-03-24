@@ -49,6 +49,12 @@ setup-arm: ## Setup the project for ARM
 check-docker: ## Check if Docker is installed
 	@docker --version > /dev/null || (echo "Docker is not installed. Please install Docker first." && exit 1)
 
+optimize-images: ## Optimize images using Docker
+	make check-docker
+	docker run -it --rm \
+    	-v ./:/app -w /app \
+    	node:alpine sh -c "chmod +x /app/bin/optimize-images.sh && /app/bin/optimize-images.sh"
+
 ##@ Docs
 
 help: ## Print the makefile help
