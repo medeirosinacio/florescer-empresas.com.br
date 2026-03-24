@@ -1,40 +1,48 @@
-<nav class="navbar-fixed bg-warm-50/90 backdrop-blur-md border-b border-warm-200/50 "
-     x-data="{ open: false }"
+<nav class="navbar-fixed transition-all duration-300"
+     x-data="{ open: false, scrolled: false }"
+     x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })"
+     :class="scrolled ? 'bg-warm-50/95 backdrop-blur-md border-b border-warm-200/50 shadow-sm' : 'bg-transparent border-b border-transparent'"
      id="navbar">
-  <div class="max-w-5xl mx-auto px-6 ">
-    <div class="flex items-center justify-between h-16 md:h-18 ">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="flex items-center justify-between h-16 md:h-18">
 
       <!-- Logo + Nome -->
-      <a class="flex items-center gap-2.5 group " href="{{ site.srcurl }}/" aria-label="Florescer Desenvolvimento Humano — Início">
+      <a class="flex items-center gap-2.5 group" href="{{ site.srcurl }}/" aria-label="Florescer Desenvolvimento Humano — Início">
         <img src="{{ site.srcurl }}{{ site.image_path }}logo/logo.svg"
              alt="Logo Florescer"
              width="32" height="32"
-             class="transition-transform duration-300 group-hover:scale-105 ">
-        <span class="font-serif text-lg font-semibold text-texto-800 tracking-tight leading-tight ">
+             class="transition-transform duration-300 group-hover:scale-105">
+        <span class="font-serif text-lg font-semibold tracking-tight leading-tight transition-colors duration-300"
+              :class="scrolled ? 'text-texto-800' : 'text-white'">
           Florescer
         </span>
       </a>
 
       <!-- Menu Desktop -->
-      <div class="hidden lg:flex items-center gap-1 ">
-        <a class="px-3.5 py-2 text-sm font-medium text-texto-600 hover:text-sage-600 transition-colors duration-200 rounded-lg hover:bg-sage-50 "
+      <div class="hidden lg:flex items-center gap-1">
+        <a class="px-3.5 py-2 text-sm font-medium transition-colors duration-200 rounded-lg"
+           :class="scrolled ? 'text-texto-600 hover:text-sage-600 hover:bg-sage-50' : 'text-white/80 hover:text-white hover:bg-white/10'"
            href="{{ site.srcurl }}/#quem-somos">Quem Somos</a>
-        <a class="px-3.5 py-2 text-sm font-medium text-texto-600 hover:text-sage-600 transition-colors duration-200 rounded-lg hover:bg-sage-50 "
+        <a class="px-3.5 py-2 text-sm font-medium transition-colors duration-200 rounded-lg"
+           :class="scrolled ? 'text-texto-600 hover:text-sage-600 hover:bg-sage-50' : 'text-white/80 hover:text-white hover:bg-white/10'"
            href="{{ site.srcurl }}/#servicos">Serviços</a>
-        <a class="px-3.5 py-2 text-sm font-medium text-texto-600 hover:text-sage-600 transition-colors duration-200 rounded-lg hover:bg-sage-50 "
+        <a class="px-3.5 py-2 text-sm font-medium transition-colors duration-200 rounded-lg"
+           :class="scrolled ? 'text-texto-600 hover:text-sage-600 hover:bg-sage-50' : 'text-white/80 hover:text-white hover:bg-white/10'"
            href="{{ site.srcurl }}/#equipe">Equipe</a>
-        <a class="ml-3 inline-flex items-center gap-1.5 bg-sage-500 hover:bg-sage-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-sage-200/50"
+        <a class="ml-3 inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200"
+           :class="scrolled ? 'bg-sage-500 hover:bg-sage-600 text-white hover:shadow-lg hover:shadow-sage-200/50' : 'bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-sm'"
            href="{{ site.srcurl }}/#contato">
           Fale Conosco
         </a>
       </div>
 
       <!-- Hamburger Mobile -->
-      <button class="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg text-texto-600 hover:text-sage-600 hover:bg-sage-50 transition-colors "
+      <button class="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg transition-colors"
+              :class="scrolled ? 'text-texto-600 hover:text-sage-600 hover:bg-sage-50' : 'text-white/80 hover:text-white hover:bg-white/10'"
               @click="open = !open"
               :aria-expanded="open"
               aria-label="Abrir menu">
-        <svg class="w-5 h-5 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           <path x-show="open" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -43,7 +51,7 @@
   </div>
 
   <!-- Menu Mobile -->
-  <div class="lg:hidden border-t border-warm-200/50 bg-warm-50 "
+  <div class="lg:hidden border-t border-warm-200/50 bg-warm-50"
        x-show="open"
        x-cloak
        x-transition:enter="transition ease-out duration-150"
@@ -52,7 +60,7 @@
        x-transition:leave="transition ease-in duration-100"
        x-transition:leave-start="opacity-100 translate-y-0"
        x-transition:leave-end="opacity-0 -translate-y-2">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-1 ">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-1">
       <a class="block px-4 py-3 text-sm font-medium text-texto-700 hover:text-sage-600 hover:bg-sage-50 rounded-xl border-b border-warm-100 transition-colors"
          href="{{ site.srcurl }}/#quem-somos" @click="open = false">Quem Somos</a>
       <a class="block px-4 py-3 text-sm font-medium text-texto-700 hover:text-sage-600 hover:bg-sage-50 rounded-xl border-b border-warm-100 transition-colors"
