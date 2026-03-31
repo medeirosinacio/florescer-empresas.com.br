@@ -4,8 +4,64 @@
     <meta charset="utf-8">
     {%if paginator and paginator.page != 1 %} <title> {{ page.title }} - Página {{ paginator.page }} | {{ site.title }} </title>{% endif %}
     {% seo %}
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="{{ site.srcurl }}{{ site.css_path }}output.css">
     <link rel="icon" type="image/x-icon" href="{{ site.srcurl }}/favicon.ico">
     <link rel="icon" type="image/svg+xml" href="{{ site.srcurl }}{{ site.image_path }}logo/logo.svg">
     <link rel="apple-touch-icon" sizes="256x256" href="{{ site.srcurl }}{{ site.image_path }}logo/apple-touch-icon.png">
+    <link rel="preload" href="{{ site.srcurl }}/assets/fonts/Inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ site.srcurl }}/assets/fonts/CormorantGaramond/CormorantGaramond-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Florescer Desenvolvimento Humano",
+      "description": "{{ site.description | strip_html | strip_newlines }}",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "logo": "{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo.svg",
+      {% if page.image %}"image": "{{ site.url }}{{ site.baseurl }}{{ page.image }}",{% endif %}
+      "email": "{{ site.email }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Porto Alegre"
+        },
+        {
+          "@type": "State",
+          "name": "Rio Grande do Sul"
+        }
+      ],
+      "serviceType": [
+        "Psicologia Organizacional",
+        "Treinamento Corporativo",
+        "Desenvolvimento de Lideranças",
+        "Saúde Mental no Trabalho",
+        "Consultoria de RH",
+        "Palestras e Workshops"
+      ],
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Fernanda Stroff",
+          "jobTitle": "Psicóloga Clínica e Organizacional",
+          "sameAs": "{{ site.instagram_fernanda }}"
+        },
+        {
+          "@type": "Person",
+          "name": "Isis Couto",
+          "jobTitle": "Psicóloga Clínica e Organizacional",
+          "sameAs": "{{ site.instagram_isis }}"
+        }
+      ],
+      "sameAs": [
+        "{{ site.instagram_url }}",
+        "{{ site.linkedin_url }}"
+      ]
+    }
+    </script>
 </head>
