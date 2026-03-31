@@ -8,8 +8,8 @@ url: https://medeirosinacio.github.io
 srcurl: "/florescer-empresas.com.br"
 lang: pt-BR
 locale: pt_BR
-author: Fernanda Strof e Isis Couto
-description: "Psicólogas especializadas em desenvolvimento humano organizacional. Treinamentos, lideranças e saúde mental para empresas que colocam pessoas no centro."
+author: Fernanda Stroff e Isis Couto
+description: "Psicólogas clínicas e organizacionais atuando no desenvolvimento humano. Treinamentos, lideranças e saúde mental para empresas que colocam pessoas no centro."
 google_analytics: ""
 published: true
 
@@ -26,6 +26,10 @@ social:
 instagram_url: "https://www.instagram.com/florescer.dh/"
 linkedin_url:  "https://www.linkedin.com/company/florescer-dh/"
 whatsapp_url:  "https://wa.me/5541999999999"
+
+# Instagrams pessoais
+instagram_fernanda: "https://www.instagram.com/fernanda_stroffpsicologia/"
+instagram_isis:     "https://www.instagram.com/psicologaisiscouto/"
 
 # Site Paths
 post_path:  /assets/images/posts/
