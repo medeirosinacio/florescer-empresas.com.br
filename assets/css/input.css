@@ -59,7 +59,7 @@
   --color-texto-100: #f5f4f2;
   --color-texto-200: #e8e6e1;
   --color-texto-300: #d2cec6;
-  --color-texto-400: #a8a299;
+  --color-texto-400: #857f77;
   --color-texto-500: #7e7870;
   --color-texto-600: #5c5650;
   --color-texto-700: #44403b;
@@ -123,14 +123,6 @@
   font-family: "Inter";
   src: url("../fonts/Inter/Inter-Bold.woff2") format("woff2");
   font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/Inter/Inter-ExtraBold.woff2") format("woff2");
-  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
