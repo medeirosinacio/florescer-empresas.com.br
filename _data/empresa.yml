@@ -1,0 +1,101 @@
+# ============================================================
+# Dados centralizados da Florescer Desenvolvimento Humano
+# Usados no site principal (index.html) e na apresentação
+# ============================================================
+
+nome: Florescer Desenvolvimento Humano
+tagline: Psicologia organizacional para empresas que colocam pessoas no centro.
+localizacao: Grande Porto Alegre e Região
+
+fundadoras:
+  - nome: Fernanda Stroff
+    titulo: Psicóloga Clínica e Organizacional
+    foto: foto-04.jpg
+    descricao: >-
+      Atua no campo do desenvolvimento humano e das relações de trabalho, articulando escuta clínica
+      e visão estratégica na construção de ambientes organizacionais mais saudáveis e funcionais.
+    cor: sage      # cor do badge e hover
+    instagram_key: instagram_fernanda   # chave no _config.yml
+    crp_key: crp_fernanda               # chave no _config.yml
+
+  - nome: Isis Couto
+    titulo: Psicóloga Clínica e Organizacional
+    foto: foto-07.jpg
+    foto_position: "top 8%"
+    descricao: >-
+      Traz a profundidade da escuta clínica para o universo das organizações. Foco em
+      saúde mental, vínculos relacionais e construção de culturas corporativas mais conscientes.
+    cor: blush
+    instagram_key: instagram_isis
+    crp_key: crp_isis
+
+servicos:
+  - titulo: Treinamentos e Desenvolvimento de Pessoas
+    descricao: >-
+      Capacitações voltadas para habilidades emocionais, relacionais e comportamentais
+      no ambiente de trabalho. Práticas e aplicáveis ao dia a dia da equipe.
+    descricao_curta: >-
+      Capacitações voltadas para habilidades emocionais, relacionais e comportamentais no ambiente de trabalho.
+    tags:
+      - Soft Skills
+      - Equipes
+      - Comportamento
+
+  - titulo: Desenvolvimento de Lideranças
+    descricao: >-
+      Formação de líderes mais conscientes, preparados para gerir com escuta,
+      clareza e responsabilidade.
+    descricao_curta: >-
+      Formação de líderes mais conscientes, preparados para gerir com escuta, clareza e responsabilidade.
+    tags:
+      - CNV
+      - Cultura
+      - Conflitos
+      - Feedbacks
+      - IE
+
+  - titulo: Palestras e Workshops
+    descricao: >-
+      Conteúdos acessíveis e transformadores sobre saúde mental no trabalho,
+      promovendo reflexão e consciência coletiva.
+    descricao_curta: >-
+      Conteúdos acessíveis sobre saúde mental no trabalho, promovendo reflexão e consciência coletiva.
+    tags:
+      - Saúde Mental
+      - Eventos
+      - Conscientização
+
+  - titulo: Rodas de Conversa
+    descricao: >-
+      Espaços de escuta e troca que fortalecem vínculos, promovem pertencimento
+      e ampliam a consciência coletiva nas equipes.
+    descricao_curta: >-
+      Espaços de escuta e troca que fortalecem vínculos, promovem pertencimento e ampliam a consciência coletiva.
+    tags:
+      - Escuta
+      - Vínculos
+      - Pertencimento
+
+  - titulo: Apoio a RH e Gestão de Pessoas
+    destaque: true
+    descricao: >-
+      Atuação estratégica junto ao RH e DH para melhoria das relações, comunicação interna
+      e clima organizacional, com foco em resultados sustentáveis de longo prazo.
+    descricao_curta: >-
+      Atuação estratégica junto ao RH para melhoria das relações, comunicação interna e clima organizacional, com foco em resultados sustentáveis.
+    imagem: foto-06.jpg
+
+diferenciais:
+  - titulo: Integração técnica + olhar humano
+    descricao: Unimos conhecimento clínico em psicologia com sensibilidade para a cultura de cada organização.
+
+  - titulo: Experiência clínica aplicada ao corporativo
+    descricao: A formação em clínica enriquece cada intervenção organizacional com profundidade e rigor.
+
+  - titulo: Abordagem ética, sensível e estratégica
+    descricao: Respeitamos a complexidade humana e os objetivos do negócio, sem abrir mão da ética.
+
+  - titulo: Foco em mudanças culturais duradouras
+    descricao: "Não trabalhamos para \"treinar pessoas\". Trabalhamos para transformar relações de trabalho."
+
+citacao: "Produtividade sem saúde não se sustenta. Desenvolvimento sem escuta não acontece."

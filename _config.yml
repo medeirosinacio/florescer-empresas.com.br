@@ -5,6 +5,7 @@ source: .
 destination: ./public
 baseurl: ""
 url: https://florescer-empresas.com.br
+domain: florescer-empresas.com.br
 srcurl: ""
 lang: pt-BR
 locale: pt_BR

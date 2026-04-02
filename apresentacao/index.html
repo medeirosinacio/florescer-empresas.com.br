@@ -1,0 +1,848 @@
+---
+layout: none
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação — Florescer Desenvolvimento Humano</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    /* ============================================================
+       RESET + FONTES
+       ============================================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @font-face {
+      font-family: "Cormorant Garamond";
+      src: url("/assets/fonts/CormorantGaramond/CormorantGaramond-Regular.woff2") format("woff2");
+      font-weight: 300 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Cormorant Garamond";
+      src: url("/assets/fonts/CormorantGaramond/CormorantGaramond-Italic.woff2") format("woff2");
+      font-weight: 300 700;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("/assets/fonts/Inter/Inter-Regular.woff2") format("woff2");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("/assets/fonts/Inter/Inter-Medium.woff2") format("woff2");
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("/assets/fonts/Inter/Inter-SemiBold.woff2") format("woff2");
+      font-weight: 600; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Inter";
+      src: url("/assets/fonts/Inter/Inter-Bold.woff2") format("woff2");
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+
+    /* ============================================================
+       DESIGN TOKENS
+       ============================================================ */
+    :root {
+      --sage-50:  #f4f7f4; --sage-100: #e4ede4; --sage-200: #c8dac8;
+      --sage-300: #a0bfa0; --sage-400: #729d72; --sage-500: #507d50;
+      --sage-600: #3d6340; --sage-700: #324f35; --sage-800: #29402c;
+      --sage-900: #223525;
+
+      --blush-50:  #fdf6f2; --blush-100: #fae9e0; --blush-200: #f4d0bc;
+      --blush-300: #ecae8e; --blush-400: #e08560; --blush-500: #d4654a;
+
+      --warm-50:  #faf8f5; --warm-100: #f4f0e8; --warm-200: #e8e0d0;
+      --warm-300: #d5c9b4;
+
+      --gold-300: #f2cc5a; --gold-400: #e9b22a;
+
+      --texto-400: #857f77; --texto-500: #7e7870; --texto-600: #5c5650;
+      --texto-700: #44403b; --texto-800: #2e2b27; --texto-900: #1c1a17;
+
+      --font-sans:  "Inter", system-ui, sans-serif;
+      --font-serif: "Cormorant Garamond", Georgia, serif;
+    }
+
+    /* ============================================================
+       GLOBAL
+       ============================================================ */
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--texto-800);
+      background: var(--warm-50);
+      height: 100%;
+    }
+
+    /* ============================================================
+       SLIDE BASE
+       ============================================================ */
+    .slide {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 4rem;
+      position: relative;
+      overflow: hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .slide-inner {
+      width: 100%;
+      max-width: 1100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ============================================================
+       BLOBS DECORATIVOS
+       ============================================================ */
+    .blob {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(80px);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    /* ============================================================
+       TIPOGRAFIA
+       ============================================================ */
+    .label {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--sage-500);
+    }
+
+    .heading {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--texto-900);
+    }
+
+    .heading em {
+      font-style: italic;
+      color: var(--sage-500);
+    }
+
+    .body-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--texto-600);
+    }
+
+    .divider {
+      width: 3rem;
+      height: 1px;
+      background: var(--sage-200);
+      margin: 1.25rem 0;
+    }
+
+    /* ============================================================
+       CAPA (SLIDE 1)
+       ============================================================ */
+    .slide-cover {
+      background: linear-gradient(160deg, var(--sage-800) 0%, var(--sage-900) 40%, var(--texto-900) 100%);
+      color: white;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .slide-cover .logo-img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 2rem;
+      filter: brightness(0) invert(1);
+    }
+
+    .slide-cover .heading {
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .slide-cover .heading em { color: var(--sage-300); }
+
+    .slide-cover .subtitle {
+      font-size: 1.1rem;
+      color: var(--sage-200);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    .founders {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .founder-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .founder-crp {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--sage-300);
+      margin-top: 0.2rem;
+    }
+
+    .cover-footer {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage-400);
+    }
+
+    /* ============================================================
+       SLIDE 2 — QUEM SOMOS
+       ============================================================ */
+    .slide-about { background: var(--warm-50); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-grid .heading { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 1rem; }
+
+    .about-photo {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 30px rgba(80, 125, 80, 0.12);
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .pillar {
+      background: white;
+      border: 1px solid var(--sage-100);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .pillar-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, var(--sage-500), var(--sage-700));
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-icon svg { width: 1.2rem; height: 1.2rem; }
+
+    .pillar h3 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--texto-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .pillar p {
+      font-size: 0.78rem;
+      color: var(--texto-500);
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       SLIDE 3 — SERVIÇOS
+       ============================================================ */
+    .slide-services { background: white; padding-top: 2rem; padding-bottom: 2rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .service-card {
+      background: var(--warm-50);
+      border: 1px solid var(--warm-200);
+      border-radius: 1rem;
+      padding: 1.15rem;
+      transition: border-color 0.3s;
+    }
+
+    .service-card:hover { border-color: var(--sage-300); }
+
+    .service-icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-icon svg { width: 1.1rem; height: 1.1rem; }
+    .service-icon.sage { background: linear-gradient(135deg, var(--sage-500), var(--sage-700)); color: white; }
+    .service-icon.blush { background: linear-gradient(135deg, var(--blush-400), var(--blush-500)); color: white; }
+    .service-icon.gold { background: linear-gradient(135deg, var(--gold-400), var(--gold-300)); color: var(--texto-900); }
+
+    .service-card h3 {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--texto-900);
+      margin-bottom: 0.35rem;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      font-size: 0.78rem;
+      color: var(--texto-500);
+      line-height: 1.5;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+    }
+
+    .service-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: var(--sage-50);
+      color: var(--sage-600);
+      border: 1px solid var(--sage-100);
+    }
+
+    /* Card largo (Apoio a RH) */
+    .service-card.wide {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .service-card.wide .service-image {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.75rem;
+    }
+
+    /* ============================================================
+       SLIDE 4 — DIFERENCIAIS
+       ============================================================ */
+    .slide-diff { background: var(--warm-50); }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .diff-card {
+      display: flex;
+      gap: 1rem;
+      background: white;
+      border: 1px solid var(--warm-200);
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+
+    .diff-num {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--sage-200);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .diff-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--texto-900);
+      margin-bottom: 0.35rem;
+    }
+
+    .diff-card p {
+      font-size: 0.82rem;
+      color: var(--texto-500);
+      line-height: 1.55;
+    }
+
+    .quote-block {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .quote-block blockquote {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--texto-700);
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       SLIDE 5 — CONTATO
+       ============================================================ */
+    .slide-contact {
+      background: linear-gradient(160deg, var(--sage-800) 0%, var(--sage-900) 40%, var(--texto-900) 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .slide-contact .heading { color: white; font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.75rem; }
+    .slide-contact .heading em { color: var(--sage-300); }
+
+    .slide-contact .body-text { color: var(--sage-200); max-width: 520px; margin: 0 auto 2.5rem; }
+
+    .contact-channels {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+
+    .contact-btn svg { width: 1.1rem; height: 1.1rem; }
+
+    .btn-whatsapp { background: #25D366; color: white; }
+    .btn-email { background: white; color: var(--texto-800); }
+    .btn-instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; }
+
+    .contact-detail {
+      font-size: 0.8rem;
+      color: var(--sage-300);
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+
+    .contact-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.7rem;
+      color: var(--sage-400);
+      letter-spacing: 0.1em;
+    }
+
+    .contact-footer a { color: var(--sage-300); text-decoration: none; }
+
+    /* ============================================================
+       NAV DOTS (lado direito)
+       ============================================================ */
+    .slide-nav {
+      position: fixed;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 50;
+    }
+
+    .slide-nav a {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--sage-300);
+      opacity: 0.4;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .slide-nav a.active {
+      opacity: 1;
+      transform: scale(1.3);
+      background: var(--sage-500);
+    }
+
+    /* ============================================================
+       PRINT / PDF
+       ============================================================ */
+    @media print {
+      @page { size: landscape; margin: 0; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .slide {
+        min-height: 100vh;
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+      .slide:last-child { page-break-after: auto; }
+      .slide-nav { display: none; }
+    }
+
+    /* ============================================================
+       RESPONSIVE (mobile)
+       ============================================================ */
+    @media (max-width: 768px) {
+      .slide { padding: 2rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-photo { height: 240px; }
+      .pillars { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card.wide { grid-column: span 1; grid-template-columns: 1fr; }
+      .service-card.wide .service-image { height: 120px; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .founders { flex-direction: column; gap: 1.5rem; }
+      .slide-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav dots -->
+  <nav class="slide-nav" aria-label="Navegação dos slides">
+    <a href="#capa" aria-label="Capa"></a>
+    <a href="#quem-somos" aria-label="Quem somos"></a>
+    <a href="#servicos" aria-label="Serviços"></a>
+    <a href="#diferenciais" aria-label="Diferenciais"></a>
+    <a href="#contato" aria-label="Contato"></a>
+  </nav>
+
+  <!-- ================================================================
+       SLIDE 1 — CAPA
+       ================================================================ -->
+  <section class="slide slide-cover" id="capa">
+    <div class="blob" style="width:400px;height:400px;background:var(--sage-600);top:-80px;right:-100px;"></div>
+    <div class="blob" style="width:300px;height:300px;background:var(--blush-400);bottom:-60px;left:-80px;opacity:0.15;"></div>
+
+    <div class="slide-inner">
+      <img src="/assets/images/logo/logo.svg" alt="Florescer" class="logo-img">
+      <h1 class="heading">
+        Florescer<br><em>Desenvolvimento Humano</em>
+      </h1>
+      <p class="subtitle">{{ site.data.empresa.tagline }}</p>
+
+      <div class="founders">
+        {% for f in site.data.empresa.fundadoras %}
+        <div>
+          <p class="founder-name">{{ f.nome }}</p>
+          <p class="founder-crp">{{ site[f.crp_key] }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="cover-footer">{{ site.data.empresa.localizacao }}</div>
+  </section>
+
+  <!-- ================================================================
+       SLIDE 2 — QUEM SOMOS
+       ================================================================ -->
+  <section class="slide slide-about" id="quem-somos">
+    <div class="slide-inner">
+      <div class="about-grid">
+        <div>
+          <span class="label">Quem somos</span>
+          <div class="divider"></div>
+          <h2 class="heading">Escuta clínica a serviço das <em>organizações</em></h2>
+          <p class="body-text" style="margin-top:1rem;">
+            A Florescer nasce do encontro entre duas psicólogas que acreditam que o desenvolvimento das empresas passa, necessariamente, pelo desenvolvimento das pessoas.
+          </p>
+          <p class="body-text" style="margin-top:0.75rem;">
+            Atuamos junto a organizações que desejam ir além de modelos tradicionais: promovendo ambientes mais saudáveis, conscientes e sustentáveis, onde produtividade e saúde mental caminham juntas.
+          </p>
+          <div class="pillars">
+            <div class="pillar">
+              <div class="pillar-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M12 8v4l2 2"/></svg>
+              </div>
+              <h3>Escuta</h3>
+              <p>Ouvimos antes de propor qualquer solução</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v18m-7-7h14"/></svg>
+              </div>
+              <h3>Sob medida</h3>
+              <p>Cada intervenção é construída para o contexto real</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <h3>Resultado</h3>
+              <p>Mudanças sustentáveis na cultura organizacional</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="/assets/images/foto-02.jpg" alt="Equipe Florescer" class="about-photo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SLIDE 3 — SERVIÇOS
+       ================================================================ -->
+  <section class="slide slide-services" id="servicos">
+    <div class="slide-inner">
+      <span class="label">O que oferecemos</span>
+      <div class="divider"></div>
+      <h2 class="heading" style="font-size:clamp(1.8rem,3vw,2.4rem);">Nossas <em>soluções</em></h2>
+      <p class="body-text" style="margin-top:0.5rem;max-width:600px;">Construídas de forma personalizada, com escuta ativa e compromisso com resultados reais.</p>
+
+      <div class="services-grid">
+        <!-- 1 -->
+        <div class="service-card">
+          <div class="service-icon sage">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>{{ site.data.empresa.servicos[0].titulo }}</h3>
+          <p>{{ site.data.empresa.servicos[0].descricao_curta }}</p>
+          <div class="service-tags">
+            {% for tag in site.data.empresa.servicos[0].tags %}
+            <span class="service-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="service-card">
+          <div class="service-icon blush">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>{{ site.data.empresa.servicos[1].titulo }}</h3>
+          <p>{{ site.data.empresa.servicos[1].descricao_curta }}</p>
+          <div class="service-tags">
+            {% for tag in site.data.empresa.servicos[1].tags %}
+            <span class="service-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="service-card">
+          <div class="service-icon gold">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3>{{ site.data.empresa.servicos[3].titulo }}</h3>
+          <p>{{ site.data.empresa.servicos[3].descricao_curta }}</p>
+          <div class="service-tags">
+            {% for tag in site.data.empresa.servicos[3].tags %}
+            <span class="service-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- 4 — Palestras (normal) -->
+        <div class="service-card">
+          <div class="service-icon sage">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          </div>
+          <h3>{{ site.data.empresa.servicos[2].titulo }}</h3>
+          <p>{{ site.data.empresa.servicos[2].descricao_curta }}</p>
+          <div class="service-tags">
+            {% for tag in site.data.empresa.servicos[2].tags %}
+            <span class="service-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- 5 — Apoio a RH (wide) -->
+        <div class="service-card wide">
+          <div>
+            <div class="service-icon blush">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>{{ site.data.empresa.servicos[4].titulo }}</h3>
+            <p>{{ site.data.empresa.servicos[4].descricao_curta }}</p>
+          </div>
+          <img src="/assets/images/foto-01.jpg" alt="{{ site.data.empresa.servicos[4].titulo }}" class="service-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SLIDE 4 — DIFERENCIAIS
+       ================================================================ -->
+  <section class="slide slide-diff" id="diferenciais">
+    <div class="slide-inner">
+      <span class="label">Por que a Florescer</span>
+      <div class="divider"></div>
+      <h2 class="heading" style="font-size:clamp(1.8rem,3vw,2.4rem);">Nossa <em>forma</em> de trabalhar</h2>
+
+      <div class="diff-grid">
+        {% for d in site.data.empresa.diferenciais %}
+        <div class="diff-card">
+          <span class="diff-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <div>
+            <h3>{{ d.titulo }}</h3>
+            <p>{{ d.descricao }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="quote-block">
+        <blockquote>"{{ site.data.empresa.citacao }}"</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SLIDE 5 — CONTATO
+       ================================================================ -->
+  <section class="slide slide-contact" id="contato">
+    <div class="blob" style="width:350px;height:350px;background:var(--sage-600);top:-60px;left:-100px;"></div>
+    <div class="blob" style="width:250px;height:250px;background:var(--blush-400);bottom:-40px;right:-60px;opacity:0.12;"></div>
+
+    <div class="slide-inner">
+      <span class="label" style="color:var(--sage-300);">Entre em contato</span>
+      <div class="divider" style="background:var(--sage-600);margin:1.25rem auto;"></div>
+      <h2 class="heading">Vamos construir <em>isso juntos?</em></h2>
+      <p class="body-text" style="color:var(--sage-200);max-width:520px;margin:0 auto 2.5rem;">
+        Cada jornada começa com uma conversa. Escolha o canal que preferir e vamos desenvolver uma proposta personalizada para a sua empresa.
+      </p>
+
+      <div class="contact-channels">
+        <a href="{{ site.whatsapp_url }}" class="contact-btn btn-whatsapp" target="_blank" rel="noopener">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+        <a href="mailto:{{ site.email }}" class="contact-btn btn-email">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          E-mail
+        </a>
+        <a href="{{ site.instagram_url }}" class="contact-btn btn-instagram" target="_blank" rel="noopener">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+      </div>
+
+      <div class="contact-detail">
+        {{ site.email }}<br>
+        {{ site.instagram_url | replace: "https://www.instagram.com/", "@" | replace: "/", "" }}
+        · {{ site.linkedin_url | replace: "https://www.linkedin.com/company/", "" | replace: "/", "" }}
+      </div>
+
+      <div class="contact-footer">
+        <p>© Florescer Desenvolvimento Humano {{ 'now' | date: "%Y" }}</p>
+        <p style="margin-top:0.3rem;">
+          <a href="https://{{ site.domain }}">{{ site.domain }}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       NAV DOTS — IntersectionObserver
+       ================================================================ -->
+  <script>
+    // Nav dots — IntersectionObserver
+    document.addEventListener('DOMContentLoaded', () => {
+      const dots = document.querySelectorAll('.slide-nav a');
+      const sections = Array.from(document.querySelectorAll('.slide'));
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            dots.forEach(d => d.classList.toggle('active', d.getAttribute('href') === '#' + id));
+          }
+        });
+      }, { threshold: 0.45 });
+
+      sections.forEach(s => observer.observe(s));
+
+      // Navegação por teclado
+      document.addEventListener('keydown', e => {
+        const current = sections.findIndex(s => {
+          const rect = s.getBoundingClientRect();
+          return rect.top >= -10 && rect.top < window.innerHeight / 2;
+        });
+
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+          e.preventDefault();
+          const next = sections[Math.min(current + 1, sections.length - 1)];
+          if (next) next.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          e.preventDefault();
+          const prev = sections[Math.max(current - 1, 0)];
+          if (prev) prev.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
