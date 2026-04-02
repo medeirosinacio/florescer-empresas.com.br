@@ -27,6 +27,8 @@ whatsapp_url:  "https://wa.me/5541999999999"
 # Instagrams pessoais
 instagram_fernanda: "https://www.instagram.com/fernanda_stroffpsicologia/"
 instagram_isis:     "https://www.instagram.com/psicologaisiscouto/"
+crp_fernanda:       "CRP 07/42859"
+crp_isis:           "CRP 07/34586"
 
 # Site Paths
 post_path:  /assets/images/posts/
