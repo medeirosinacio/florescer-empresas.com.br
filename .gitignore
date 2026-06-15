@@ -25,3 +25,4 @@ assets/css/output.css
 tailwindcss-linux-arm64
 /tailwindcss-linux-arm64
 tailwindcss-macos-arm64
+**.patch
