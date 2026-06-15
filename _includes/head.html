@@ -21,6 +21,19 @@
       "logo": "{{ site.url }}{{ site.baseurl }}/assets/images/logo/logo.svg",
       {% if page.image %}"image": "{{ site.url }}{{ site.baseurl }}{{ page.image }}",{% endif %}
       "email": "{{ site.email }}",
+      {% if site.whatsapp_contacts %}
+      "contactPoint": [
+        {% for contact in site.whatsapp_contacts %}
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "name": "{{ contact.name }}",
+          "telephone": "{{ contact.phone_display }}",
+          "url": "{{ contact.url }}"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      {% endif %}
       "address": {
         "@type": "PostalAddress",
         "addressRegion": "RS",

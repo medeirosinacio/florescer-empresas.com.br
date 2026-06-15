@@ -1,6 +1,6 @@
 # General
 title: Florescer Desenvolvimento Humano
-email: contato@florescer-empresas.com.br
+email: contatoflorescerempresas@gmail.com
 source: .
 destination: ./public
 baseurl: ""
@@ -18,12 +18,21 @@ published: true
 social:
   name: Florescer Desenvolvimento Humano
   links:
-    - https://www.instagram.com/florescer.dh/
-    - https://www.linkedin.com/company/florescer-dh/
+    - https://www.instagram.com/florescer.empresas/
+    - https://www.linkedin.com/in/florescer-desenvolvimento-humano-ab8387411/
 
-instagram_url: "https://www.instagram.com/florescer.dh/"
-linkedin_url:  "https://www.linkedin.com/company/florescer-dh/"
-whatsapp_url:  "https://wa.me/5541999999999"
+instagram_url: "https://www.instagram.com/florescer.empresas/"
+linkedin_url:  "https://www.linkedin.com/in/florescer-desenvolvimento-humano-ab8387411/"
+whatsapp_url:  "https://wa.me/5551995168080"
+whatsapp_contacts:
+  - name: Fernanda Stroff
+    phone_display: "(51) 99516-8080"
+    phone_e164: "5551995168080"
+    url: "https://wa.me/5551995168080"
+  - name: Isis Couto
+    phone_display: "(51) 98564-0199"
+    phone_e164: "5551985640199"
+    url: "https://wa.me/5551985640199"
 
 # Instagrams pessoais
 instagram_fernanda: "https://www.instagram.com/fernanda_stroffpsicologia/"
